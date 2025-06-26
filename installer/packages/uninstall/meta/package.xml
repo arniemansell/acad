@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Uninstall</DisplayName>
+    <Description>Run the maintenance too for ACAD</Description>
+    <Version>3.0</Version>
+    <ReleaseDate>2021-10-01</ReleaseDate>
+    <ForcedInstallation>false</ForcedInstallation>
+    <Default>true</Default>
+    <Script>application_maintenance.qs</Script>
+</Package>

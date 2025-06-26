@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>Documentation</DisplayName>
+    <Description>User Guide</Description>
+    <Version>3.0</Version>
+    <ReleaseDate>2021-10-01</ReleaseDate>
+	<Licenses></Licenses>
+	<ForcedInstallation>false</ForcedInstallation>
+    <Default>true</Default>
+	<Script>installscript.qs</Script>
+</Package>

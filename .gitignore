@@ -1,0 +1,93 @@
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.so.*
+*.dll
+*.dylib
+
+# Qt
+*.pro.user
+qt5_src/
+qt5_build/
+qt5_debug/
+qt5_release/
+
+# Qt-es
+object_script.*.Release
+object_script.*.Debug
+*_plugin_import.cpp
+/.qmake.cache
+/.qmake.stash
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+Makefile*
+*build-*
+*.qm
+*.prl
+.qt
+
+# Qt unit tests
+target_wrapper.*
+
+# QtCreator
+*.autosave
+
+# QtCreator Qml
+*.qmlproject.user
+*.qmlproject.user.*
+
+# QtCreator CMake
+CMakeLists.txt.user*
+
+# QtCreator 4.8< compilation database
+compile_commands.json
+
+# QtCreator local machine specific files for imported projects
+*creator.user*
+
+*_qmlcache.qrc
+
+# build & cmake
+bin/
+obj/
+build/
+CMakeFiles/
+cmake_install.cmake
+CMakePresets.json
+CMakeUserPresets.json
+CMakeCache.txt
+count_primes
+Makefile
+*cmake*/
+*build*/
+
+#IDEs
+.idea/
+CMakeSettings.json
+.vs\
+.vs/
+.vscode/
+.vscode\
+.kde*/
+*.kdev*
+.cache/*
+
+# Installer
+installer/*.exe
+installer/packages/*/data/*
+installer/packages/*/meta/*
+!package.xml

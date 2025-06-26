@@ -1,0 +1,2568 @@
+{
+  "tabs": [
+    {
+      "key": "PLANFORM",
+      "title": "Planform",
+      "help": "The wing planform is defined by adding a leading edge line and a trailing edge line.\nEach line can have multiple points to create complex wing shapes.\nPoints on each line are declared using (x,y) coordinates. ",
+      "sort_by": [ "X", "LEORTE" ],
+      "entry_parts": [
+        {
+          "title": "Planform Point",
+          "help": "A point on the leading or trailing edge of the wing",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LEORTE",
+              "title": "LE or TE",
+              "help": "Select Leading Edge or Trailing Edge",
+              "default": [ "LE", "TE" ]
+            },
+            {
+              "key": "X",
+              "title": "X Position",
+              "help": "The X position of the planform point in mm",
+              "default": 0.0
+            },
+            {
+              "key": "Y",
+              "title": "Y Position",
+              "help": "The Y position of the planform point in mm",
+              "default": 0.0
+            },
+            {
+              "key": "XYFILE",
+              "title": "XY File",
+              "help": "The text file from which to load the coordinates.\nOne coordinate per line with either whitespace or comma separation of x & y.",
+              "default": "Not yet configured",
+              "inactive": 1
+            },
+            {
+              "key": "P1X",
+              "title": "P1 X",
+              "help": "x coordinate of P1 (start point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P1Y",
+              "title": "P1 Y",
+              "help": "y coordinate of P1 (start point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P2X",
+              "title": "P2 X",
+              "help": "x coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P2Y",
+              "title": "P2 Y",
+              "help": "y coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P3X",
+              "title": "P3 X",
+              "help": "x coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P3Y",
+              "title": "P3 Y",
+              "help": "y coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P4X",
+              "title": "P4 X",
+              "help": "x coordinate of P4 (end point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P4Y",
+              "title": "P4 Y",
+              "help": "y coordinate of P4 (end point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NPTS",
+              "title": "# Points",
+              "help": "The number of points to render in the curve",
+              "default": 1000,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Planform X/Y File",
+          "help": "Load a text file containing (x,y) coordinates for either LE or TE.\nOne coordinate per line with either whitespace or comma separation of x & y.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LEORTE",
+              "title": "LE or TE",
+              "help": "Select Leading Edge or Trailing Edge",
+              "default": [ "LE", "TE" ]
+            },
+            {
+              "key": "X",
+              "title": "X Position",
+              "help": "The X position of the planform point in mm",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "Y",
+              "title": "Y Position",
+              "help": "The Y position of the planform point in mm",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "XYFILE",
+              "title": "XY File",
+              "help": "The text file from which to load the coordinates.\nOne coordinate per line with either whitespace or comma separation of x & y.",
+              "default": "Not yet configured"
+            },
+            {
+              "key": "P1X",
+              "title": "P1 X",
+              "help": "x coordinate of P1 (start point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P1Y",
+              "title": "P1 Y",
+              "help": "y coordinate of P1 (start point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P2X",
+              "title": "P2 X",
+              "help": "x coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P2Y",
+              "title": "P2 Y",
+              "help": "y coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P3X",
+              "title": "P3 X",
+              "help": "x coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P3Y",
+              "title": "P3 Y",
+              "help": "y coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P4X",
+              "title": "P4 X",
+              "help": "x coordinate of P4 (end point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "P4Y",
+              "title": "P4 Y",
+              "help": "y coordinate of P4 (end point) of the bezier",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NPTS",
+              "title": "# Points",
+              "help": "The number of points to render in the curve",
+              "default": 1000,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Cubic Bezier",
+          "help": "A cubic bezier defined by 4 points.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LEORTE",
+              "title": "LE or TE",
+              "help": "Select Leading Edge or Trailing Edge",
+              "default": [ "LE", "TE" ]
+            },
+            {
+              "key": "X",
+              "title": "X Position",
+              "help": "Set this to the same as P1X",
+              "default": 0.0
+            },
+            {
+              "key": "Y",
+              "title": "Y Position",
+              "help": "The Y position of the planform point in mm",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "XYFILE",
+              "title": "XY File",
+              "help": "The text file from which to load the coordinates.\nOne coordinate per line with either whitespace or comma separation of x & y.",
+              "default": "Not yet configured",
+              "inactive": 1
+            },
+            {
+              "key": "P1X",
+              "title": "P1 X",
+              "help": "x coordinate of P1 (start point) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P1Y",
+              "title": "P1 Y",
+              "help": "y coordinate of P1 (start point) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P2X",
+              "title": "P2 X",
+              "help": "x coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P2Y",
+              "title": "P2 Y",
+              "help": "y coordinate of P2 (control point 1) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P3X",
+              "title": "P3 X",
+              "help": "x coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P3Y",
+              "title": "P3 Y",
+              "help": "y coordinate of P3 (control point 2) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P4X",
+              "title": "P4 X",
+              "help": "x coordinate of P4 (end point) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "P4Y",
+              "title": "P4 Y",
+              "help": "y coordinate of P4 (end point) of the bezier",
+              "default": 0.0
+            },
+            {
+              "key": "NPTS",
+              "title": "# Points",
+              "help": "The number of points to render in the curve",
+              "default": 1000
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "key": "AIRFOILS",
+      "title": "Airfoils",
+      "help": "Define the airfoil section at positions along the wing.\nAt least two airfoil sections should be defined, one at the root\n and one at the tip of the wing. ACAD will automatically blend\nbetween the sections across the wing.",
+      "sort_by": [ "X" ],
+      "entry_parts": [
+        {
+          "title": "Airfoil Section",
+          "help": "Defines the external airfoil at this X point on the wing",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "X",
+              "title": "X Position",
+              "help": "The X position of the airfoil in mm",
+              "default": 0.0
+            },
+            {
+              "key": "AIRFOIL",
+              "title": "Airfoil File",
+              "help": "The file the airfoil is to be loaded from. Note that,\nonce opened, the airfoil is stored within ACAD and future\naccess to the .dat file is not required.  Both Selig and\nLednicker file formats are supported.",
+              "default": "Not yet configured"
+            },
+            {
+              "key": "INVERT",
+              "title": "Invert Airfoil?",
+              "help": "Invert the airfoil, allowing you to design a wing\nwhich can be built upside down on the building board.\nTHIS MUST BE SET BEFORE OPENING THE AIRFOIL DAT FILE.",
+              "default": [ "Normal", "Inverted" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "key": "RIBS",
+      "title": "Ribs",
+      "help": "Define the ribs, rib doublers and spacers of the wing",
+      "sort_by": [ "TEX" ],
+      "entry_parts": [
+        {
+          "title": "Rib",
+          "help": "A single rib on a line between the leading and trailing edge",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "IDX",
+              "title": "Index",
+              "help": "Unique index used to link ribs and their doublers",
+              "default": 0,
+              "inactive": 1
+            },
+            {
+              "key": "LINK",
+              "title": "Link To",
+              "help": "The rib with which this part is linked",
+              "default": -1,
+              "inactive": 1
+            },
+            {
+              "key": "TEX",
+              "title": "TE X",
+              "help": "The X position of the rib at the trailing edge",
+              "default": 0.0
+            },
+            {
+              "key": "LEX",
+              "title": "LE X",
+              "help": "The X position of the rib at the leading edge",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the rib material",
+              "default": 0.0
+            },
+            {
+              "key": "SHTTHK",
+              "title": "Wing Skin",
+              "help": "The thickness of the wing skin at this rib",
+              "default": 0.0
+            },
+            {
+              "key": "LE",
+              "title": "LE Width",
+              "help": "This dimension will be cut off the front of the rib\nwhen it is first generated (subsequent tasks may\nshorten the rib further).",
+              "default": 0.0
+            },
+            {
+              "key": "TE",
+              "title": "TE Width",
+              "help": "This dimension will be cut off the rear of the rib\\nwhen it is first generated (subsequent tasks may\\nshorten the rib further).",
+              "default": 0.0
+            },
+            {
+              "key": "LH",
+              "title": "Add Holes?",
+              "help": "Set to yes if this rib should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width (the amount of rib material left around the hole)",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "SHTJIG",
+              "title": "Sheeting Jig",
+              "help": "Set to yes if this rib should have a sheeting jig",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LEFTORRIGHT",
+              "title": "L / R",
+              "help": "Select whether the doubler should be to the left or right of the linked rib",
+              "default": [ "Right", "Left" ],
+              "inactive": 1
+            },
+            {
+              "key": "SAC",
+              "title": "Split Along Chord Line?",
+              "help": "Split the part into two parts along its chord line",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Doubler",
+          "help": "Associated with a rib by the Index field, this is a shorthand way to enter rib doublers",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "IDX",
+              "title": "Index",
+              "help": "Unique index used to link ribs and their doublers",
+              "default": 0,
+              "inactive": 1
+            },
+            {
+              "key": "LINK",
+              "title": "Link To",
+              "help": "The rib with which this part is linked. This may be a\nrib or another doubler.",
+              "default": 0
+            },
+            {
+              "key": "TEX",
+              "title": "TE X",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "LEX",
+              "title": "LE X",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the doubler material",
+              "default": 0.0
+            },
+            {
+              "key": "SHTTHK",
+              "title": "Wing Skin",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "LE",
+              "title": "LE Width",
+              "help": "This dimension will be cut off the front of the doubler",
+              "default": 0.0
+            },
+            {
+              "key": "TE",
+              "title": "TE Width",
+              "help": "This dimension will be cut off the rear of the doubler",
+              "default": 0.0
+            },
+            {
+              "key": "LH",
+              "title": "Add Holes?",
+              "help": "Set to yes if this doubler should have lightening holes added.\nIf set to No, the associated rib will also have holes excluded\nwhere the doubler is attached to it; if set to Yes, a border\nwill be created to ensure the rib and doubler can be glued together.",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "SHTJIG",
+              "title": "Sheeting Jig",
+              "help": "",
+              "default": [ "No", "Yes" ],
+              "inactive": 1
+            },
+            {
+              "key": "LEFTORRIGHT",
+              "title": "L / R",
+              "help": "Select whether the doubler should be to the left or right of the linked rib",
+              "default": [ "Right", "Left" ]
+            },
+            {
+              "key": "SAC",
+              "title": "Split Along Chord Line?",
+              "help": "Split the part into two parts along its chord line",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Spacer",
+          "help": "Spacers can be used to generate, for example, wing tip blocks and \nstandoffs for butting root ribs to fuselage sides.\nThey do not interact with spars or other parts.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "IDX",
+              "title": "Index",
+              "help": "",
+              "default": 0,
+              "inactive": 1
+            },
+            {
+              "key": "LINK",
+              "title": "Link To",
+              "help": "",
+              "default": -1,
+              "inactive": 1
+            },
+            {
+              "key": "TEX",
+              "title": "TE X",
+              "help": "The X position of the spacer at the trailing edge",
+              "default": 0.0
+            },
+            {
+              "key": "LEX",
+              "title": "LE X",
+              "help": "The X position of the spacer at the leading edge",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the spacer material",
+              "default": 0.0
+            },
+            {
+              "key": "SHTTHK",
+              "title": "Wing Skin",
+              "help": "The thickness of the wing skin at this spacer.\nSet this to a negative value oversize the spacer.",
+              "default": 0.0
+            },
+            {
+              "key": "LE",
+              "title": "LE Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TE",
+              "title": "TE Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "LH",
+              "title": "Add Holes?",
+              "help": "Set to yes if this spacer should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "SHTJIG",
+              "title": "Sheeting Jig",
+              "help": "",
+              "default": [ "No", "Yes" ],
+              "inactive": 1
+            },
+            {
+              "key": "LEFTORRIGHT",
+              "title": "L / R",
+              "help": "",
+              "default": [ "Right", "Left" ],
+              "inactive": 1
+            },
+            {
+              "key": "SAC",
+              "title": "Split Along Chord Line?",
+              "help": "Split the part into two parts along its chord line",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "key": "GEODETICS",
+      "title": "Geodetics",
+      "help": "Geodetics are automatically generated ribs which zig-zag between normal ribs.  They are defined by two bounding lines in the plan view which cross one or more rib bays.  The first geodetic will join the first two ribs crossed by the lines, from the top line to the bottom line; the next geodetic will cross bay two from the bottom line to the top line. The start at bottom setting will reverse the zig-zag.",
+      "sort_by": [ "TOPSTX" ],
+      "entry_parts": [
+        {
+          "title": "Geodetic Set",
+          "help": "One set of geodetic ribs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "TOPSTX",
+              "title": "Top Start X",
+              "help": "The X position of the start of the top line (the line nearest the LE)",
+              "default": 0.0
+            },
+            {
+              "key": "TOPSTY",
+              "title": "Top Start Y",
+              "help": "The Y position of the start of the top line (the line nearest the LE)",
+              "default": 0.0
+            },
+            {
+              "key": "TOPENX",
+              "title": "Top End X",
+              "help": "The X position of the end of the top line (the line nearest the LE)",
+              "default": 0.0
+            },
+            {
+              "key": "TOPENY",
+              "title": "Top End Y",
+              "help": "The Y position of the end of the top line (the line nearest the LE)",
+              "default": 0.0
+            },
+            {
+              "key": "BOTSTX",
+              "title": "Bot Start X",
+              "help": "The X position of the start of the bottom line (the line nearest the TE)",
+              "default": 0.0
+            },
+            {
+              "key": "BOTSTY",
+              "title": "Bot Start Y",
+              "help": "The Y position of the start of the bottom line (the line nearest the TE)",
+              "default": 0.0
+            },
+            {
+              "key": "BOTENX",
+              "title": "Bot End X",
+              "help": "The X position of the end of the bottom line (the line nearest the TE)",
+              "default": 0.0
+            },
+            {
+              "key": "BOTENY",
+              "title": "Bot End Y",
+              "help": "The Y position of the end of the bottom line (the line nearest the TE)",
+              "default": 0.0
+            },
+            {
+              "key": "STATBOT",
+              "title": "Start at...?",
+              "help": "Which line to start the geodetic zig-zag at",
+              "default": [ "Bottom", "Top" ]
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the geodetic rib material",
+              "default": 0.0
+            },
+            {
+              "key": "LH",
+              "title": "Add Holes?",
+              "help": "Set to yes if this rib should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "key": "RIBPARAMS",
+      "title": "Rib Params",
+      "help": "Keep Outs: Keep lightening holes out of width around where this line intersects a rib.\nWashout: Define the washout between two positions on the wing.\n  Multiple entries can be used to create complex washout profiles across the wing.\nTE Thickness: Define the trailing edge thickness between two positions on the wing.\n  Multiple entries can be used to vary the thickness profile across the wing.",
+      "sort_by": [ "STX" ],
+      "entry_parts": [
+        {
+          "title": "Keep Out",
+          "help": "Keep out for rib lightening holes",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the keep out line",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the keep out line",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the keep out line",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the keep out line",
+              "default": 0.0
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "Keep Out: The total width of the keep out - half either side of the line",
+              "default": 0.0
+            },
+            {
+              "key": "STVAL",
+              "title": "Start Value",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENVAL",
+              "title": "End Value",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "PIVOT",
+              "title": "WO Pivot Point",
+              "help": "",
+              "default": [ "CENTRE", "LE", "TE" ],
+              "inactive": 1
+            },
+            {
+              "key": "BLEND",
+              "title": "TE Blend %",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Washout",
+          "help": "Washout between two X positions on the wing.  If the start and\nend values of the washout are different, ACAD will \nblend between the two.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the washout region",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the washout region",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "STVAL",
+              "title": "Start Value",
+              "help": "Washout: The washout in degrees at the Start X position. Positive is LE down & TE up.",
+              "default": 0.0
+            },
+            {
+              "key": "ENVAL",
+              "title": "End Value",
+              "help": "Washout: The washout in degrees at the End X position. Positive is LE down & TE up.",
+              "default": 0.0
+            },
+            {
+              "key": "PIVOT",
+              "title": "WO Pivot Point",
+              "help": "Washout: The rotation will be applied around this point on the rib",
+              "default": [ "CENTRE", "LE", "TE" ]
+            },
+            {
+              "key": "BLEND",
+              "title": "TE Blend %",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "TE Thickness",
+          "help": "TE thickness between two X positions on the wing.  If the start and\\nend values of the TE Thickness are different, ACAD will \\nblend between the two.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the TE thickness region",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the TE thickness region",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "STVAL",
+              "title": "Start Value",
+              "help": "TE Thickness at the Start X position.",
+              "default": 0.0
+            },
+            {
+              "key": "ENVAL",
+              "title": "End Value",
+              "help": "TE Thickness at the End X position.",
+              "default": 0.0
+            },
+            {
+              "key": "PIVOT",
+              "title": "WO Pivot Point",
+              "help": "",
+              "default": [ "CENTRE", "LE", "TE" ],
+              "inactive": 1
+            },
+            {
+              "key": "BLEND",
+              "title": "TE Blend %",
+              "help": "TE Thickness: Percentage of the chord to blend over; set to 0 to use default",
+              "default": 0.0
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "key": "SHEETSPARS",
+      "title": "Sheet Spars and Jigs",
+      "help": "Wing spars made from sheet material and building jigs\n(jig-spars, rib supports and rib tabs)",
+      "sort_by": [ "STX" ],
+      "entry_parts": [
+        {
+          "title": "Sheet Spar",
+          "help": "A sheet spar, with both rib and spar slotted where they cross",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the spar material",
+              "default": 0.0
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0
+            },
+            {
+              "key": "INSFROM",
+              "title": "Insert",
+              "help": "Insert from above or below.  For example, if ABOVE is selected\nthe rib will be slotted at the top and the spar\nwill be slotted at the bottom.",
+              "default": [ "Above", "Below" ]
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "FALSEEDGE",
+              "title": "Remove Material",
+              "help": "This setting can be used to make the spar into a false leading or\ntrailing edge by removing rib material in front of or behind the spar.",
+              "default": [ "No", "In Front", "Behind" ]
+            },
+            {
+              "key": "LH",
+              "title": "Holes?",
+              "help": "Set to yes if this spar should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "TABSNOTSLOTS",
+              "title": "Tabs?",
+              "help": "Instead of slots at the front of the rib, use a tab with a matching hole in the spar.\nThis option should be used in conjunction with the Remove Material option.\nUsed for false leading edges.  Use a typical slot depth of 35%.",
+              "default": [ "Slots", "Tabs" ]
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Jig Height",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TABW",
+              "title": "Jig Sep %",
+              "help": "",
+              "default": 20.0,
+              "inactive": 1
+            },
+            {
+              "key": "RSTABW",
+              "title": "Rib S-Tab Width",
+              "help": "The width of support tabs added to the bottom of ribs",
+              "default": 10.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Sheet Spar+Jig",
+          "help": "A slotted sheet spar with material added below to support it whilst building",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the spar material",
+              "default": 0.0
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0
+            },
+            {
+              "key": "INSFROM",
+              "title": "Insert",
+              "help": "",
+              "default": [ "Below", "Above" ],
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "FALSEEDGE",
+              "title": "Remove Material",
+              "help": "This setting can be used to make the spar into a false leading or\ntrailing edge by removing rib material in front of or behind the spar.",
+              "default": [ "No", "In Front", "Behind" ]
+            },
+            {
+              "key": "LH",
+              "title": "Holes?",
+              "help": "Set to yes if this spar should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "TABSNOTSLOTS",
+              "title": "Tabs?",
+              "help": "Instead of slots at the front of the rib, use a tab with a matching hole in the spar.\\nThis option should be used in conjunction with the Remove Material option.\\nUsed for false leading edges.  Use a typical slot depth of 35%.",
+              "default": [ "Slots", "Tabs" ]
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Jig Height",
+              "help": "The wing centreline height above the building board",
+              "default": 0.0
+            },
+            {
+              "key": "TABW",
+              "title": "Jig Sep %",
+              "help": "The percentage of the interib spacing by which the spar is joined to the jig;\nwill be split into two equal tabs of half this. Try 20%.",
+              "default": 20.0
+            },
+            {
+              "key": "RSTABW",
+              "title": "Rib S-Tab Width",
+              "help": "The width of support tabs added to the bottom of ribs",
+              "default": 10.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Rib Support",
+          "help": "A sheet piece with partial slots in for supporting ribs whilst building the wing",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the support",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the support",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the support",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the support",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the rib support material",
+              "default": 0.0
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "INSFROM",
+              "title": "Insert",
+              "help": "",
+              "default": [ "Below", "Above" ],
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "",
+              "default": [ "Yes", "No" ],
+              "inactive": 1
+            },
+            {
+              "key": "FALSEEDGE",
+              "title": "Remove Material",
+              "help": "",
+              "default": [ "No", "In Front", "Behind" ],
+              "inactive": 1
+            },
+            {
+              "key": "LH",
+              "title": "Holes?",
+              "help": "",
+              "default": [ "No", "Yes" ],
+              "inactive": 1
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TABSNOTSLOTS",
+              "title": "Tabs?",
+              "help": "",
+              "default": [ "Slots", "Tabs" ],
+              "inactive": 1
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Jig Height",
+              "help": "The wing centreline height above the building board",
+              "default": 0.0
+            },
+            {
+              "key": "TABW",
+              "title": "Jig Sep %",
+              "help": "",
+              "default": 20.0,
+              "inactive": 1
+            },
+            {
+              "key": "RSTABW",
+              "title": "Rib S-Tab Width",
+              "help": "The width of support tabs added to the bottom of ribs",
+              "default": 10.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "Rib Support Tabs",
+          "help": "Tabs added to the bottom of ribs to support them during the build.\nA tab is added to each rib intersected by the line.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the tab line",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the tab line",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the tab line",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the tab line",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The width of the tab as a percentage of the chord",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "INSFROM",
+              "title": "Insert",
+              "help": "",
+              "default": [ "Above", "Below" ],
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "",
+              "default": [ "No", "Yes" ],
+              "inactive": 1
+            },
+            {
+              "key": "FALSEEDGE",
+              "title": "Remove Material",
+              "help": "",
+              "default": [ "No", "In Front", "Behind" ],
+              "inactive": 1
+            },
+            {
+              "key": "LH",
+              "title": "Holes?",
+              "help": "",
+              "default": [ "No", "Yes" ],
+              "inactive": 1
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TABSNOTSLOTS",
+              "title": "Tabs?",
+              "help": "",
+              "default": [ "Slots", "Tabs" ],
+              "inactive": 1
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Jig Height",
+              "help": "The wing centreline height above the building board",
+              "default": 0.0
+            },
+            {
+              "key": "TABW",
+              "title": "Jig Sep %",
+              "help": "",
+              "default": 20.0,
+              "inactive": 1
+            },
+            {
+              "key": "RSTABW",
+              "title": "Rib S-Tab Width",
+              "help": "The width of support tabs added to the bottom of ribs",
+              "default": 10.0
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "key": "STRIPSPARS",
+      "title": "Strip Spars",
+      "help": "Spars made from rectangular strip with or without inter spar webs",
+      "sort_by": [ "STX" ],
+      "entry_parts": [
+        {
+          "title": "Box Spar",
+          "help": "Top and bottom strip spars with front and rear inter-spar webs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "SPW",
+              "title": "Spar Width",
+              "help": "The width of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "SPD",
+              "title": "Spar Depth",
+              "help": "The depth of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "TORB",
+              "title": "Top or Bottom?",
+              "help": "",
+              "default": [ "Top", "Bottom" ],
+              "inactive": 1
+            },
+            {
+              "key": "WTHK",
+              "title": "Web Thickness",
+              "help": "The thickness of the material for the inter-spar webs",
+              "default": 0.0
+            },
+            {
+              "key": "WPOS",
+              "title": "Web Position",
+              "help": "Put the slotted spar part at the front, middle or rear of the strip spars",
+              "default": [ "Centre", "Front", "Rear" ],
+              "inactive": 1
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0,
+              "inactive": 1
+            },
+            {
+              "key": "WLEN",
+              "title": "Max Web Length",
+              "help": "If the inter-rib spacing is longer than this value, the web will be split.\nThis is useful for cutting the webs cross-grain from sheet stock of limited width.",
+              "default": 0.0
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+
+        {
+          "title": "H-Spar",
+          "help": "Top and bottom strip spars with a single inter-spar web between them.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "SPW",
+              "title": "Spar Width",
+              "help": "The width of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "SPD",
+              "title": "Spar Depth",
+              "help": "The depth of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "TORB",
+              "title": "Top or Bottom?",
+              "help": "",
+              "default": [ "Top", "Bottom" ],
+              "inactive": 1
+            },
+            {
+              "key": "WTHK",
+              "title": "Web Thickness",
+              "help": "The thickness of the material for the inter-spar webs",
+              "default": 0.0
+            },
+            {
+              "key": "WPOS",
+              "title": "Web Position",
+              "help": "Put the slotted spar part at the front, middle or rear of the strip spars",
+              "default": [ "Centre", "Front", "Rear" ],
+              "inactive": 1
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0,
+              "inactive": 1
+            },
+            {
+              "key": "WLEN",
+              "title": "Max Web Length",
+              "help": "If the inter-rib spacing is longer than this value, the web will be split.\nThis is useful for cutting the webs cross-grain from sheet stock of limited width.",
+              "default": 0.0
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+
+        {
+          "title": "H-Sheet Spar",
+          "help": "Top and bottom strip spars with a slotted sheet spar in between instead of normal webs.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "SPW",
+              "title": "Spar Width",
+              "help": "The width of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "SPD",
+              "title": "Spar Depth",
+              "help": "The depth of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "TORB",
+              "title": "Top or Bottom?",
+              "help": "",
+              "default": [ "Top", "Bottom" ],
+              "inactive": 1
+            },
+            {
+              "key": "WTHK",
+              "title": "Web Thickness",
+              "help": "The thickness of the material for the inter-spar webs",
+              "default": 0.0
+            },
+            {
+              "key": "WPOS",
+              "title": "Web Position",
+              "help": "Put the slotted spar part at the front, middle or rear of the strip spars",
+              "default": [ "Centre", "Front", "Rear" ]
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0
+            },
+            {
+              "key": "WLEN",
+              "title": "Max Web Length",
+              "help": "If the inter-rib spacing is longer than this value, the web will be split.\nThis is useful for cutting the webs cross-grain from sheet stock of limited width.",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+
+        {
+          "title": "Strip Spar",
+          "help": "A single rectangular spar aligned with the outline of the rib; no webs.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0
+            },
+            {
+              "key": "SPW",
+              "title": "Spar Width",
+              "help": "The width of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "SPD",
+              "title": "Spar Depth",
+              "help": "The depth of the rectangular spar strips",
+              "default": 0.0
+            },
+            {
+              "key": "TORB",
+              "title": "Top or Bottom?",
+              "help": "Place the spar in the top or bottom of the wing?",
+              "default": [ "Top", "Bottom" ]
+            },
+            {
+              "key": "WTHK",
+              "title": "Web Thickness",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WPOS",
+              "title": "Web Position",
+              "help": "Put the slotted spar part at the front, middle or rear of the strip spars",
+              "default": [ "Centre", "Front", "Rear" ],
+              "inactive": 1
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0,
+              "inactive": 1
+            },
+            {
+              "key": "WLEN",
+              "title": "Max Web Length",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+    {
+      "key": "ELEMENTS",
+      "title": "Elements",
+      "help": "Tubular or rectangular items in the wing (e.g., wing tubes or servo bearers). These are defined by a start and an end point much like spars.\nThey also have a Z component, which defines the vertical location in the wing.\nThis tab also allows alignment dots to be placed; these are two dots on ribs\nand their sheeting jigs to help with alignment when building.",
+      "sort_by": [ "STY", "STX" ],
+      "entry_parts": [
+        {
+          "title": "Rectangular Element",
+          "help": "A rectangular element, such as a plate, a servo bearer or an undercarriage bar",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STZ",
+              "title": "Start Z",
+              "help": "The Z position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENZ",
+              "title": "End Z",
+              "help": "The Z position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "DIAMETER",
+              "title": "Diameter",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "Width of a rectangular element",
+              "default": 0.0
+            },
+            {
+              "key": "DEPTH",
+              "title": "Depth",
+              "help": "Depth of a rectangular element",
+              "default": 0.0
+            },
+            {
+              "key": "ANGLE",
+              "title": "Angle",
+              "help": "The angle of a rectangular element (degrees).  Set to 0 for horizontal.",
+              "default": 0.0
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "ZMODE",
+              "title": "Z-Mode",
+              "help": "Z-Mode tells ACAD how to interpret your Z values. CHOORD will position relative to chord line; SNAP-BOTTOM or SNAP-TOP will snap the element to the rib outline and then inset it by Z; ROTATE-BOTTOM or ROTATE-TOP will snap the element to the rib outline and rotate it to the angle of the rib outline, and then inset it by Z.",
+              "default": [ "Choord", "Snap-Bottom", "Snap-Top", "Rotate-Bottom", "Rotate-Top" ]
+            },
+            {
+              "key": "DOTSIZE",
+              "title": "Dot Size",
+              "help": "",
+              "default": 1.1,
+              "inactive": 1
+            },
+            {
+              "key": "DOTINSET",
+              "title": "Dot Inset",
+              "help": "",
+              "default": 2.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+
+        {
+          "title": "Tubular Element",
+          "help": "A tubular element, such as a wing tube or a bolt hole",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STZ",
+              "title": "Start Z",
+              "help": "The Z position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENZ",
+              "title": "End Z",
+              "help": "The Z position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "DIAMETER",
+              "title": "Diameter",
+              "help": "The diameter of a tubular element",
+              "default": 0.0
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "DEPTH",
+              "title": "Depth",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ANGLE",
+              "title": "Angle",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "ZMODE",
+              "title": "Z-Mode",
+              "help": "Z-Mode tells ACAD how to interpret your Z values. CHOORD will position relative to chord line; SNAP-BOTTOM or SNAP-TOP will snap the element to the rib outline and then inset it by Z; ROTATE-BOTTOM or ROTATE-TOP will snap the element to the rib outline and rotate it to the angle of the rib outline, and then inset it by Z.",
+              "default": [ "Choord", "Snap-Bottom", "Snap-Top", "Rotate-Bottom", "Rotate-Top" ]
+            },
+            {
+              "key": "DOTSIZE",
+              "title": "Dot Size",
+              "help": "",
+              "default": 1.1,
+              "inactive": 1
+            },
+            {
+              "key": "DOTINSET",
+              "title": "Dot Inset",
+              "help": "",
+              "default": 2.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+
+        {
+          "title": "Alignment Dots",
+          "help": "Small dots applied to ribs and sheeting jigs to help with alignment during the build",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the element",
+              "default": 0.0
+            },
+            {
+              "key": "STZ",
+              "title": "Start Z",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the element",
+              "default": 0.0
+            },
+            {
+              "key": "ENZ",
+              "title": "End Z",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "DIAMETER",
+              "title": "Diameter",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "DEPTH",
+              "title": "Depth",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ANGLE",
+              "title": "Angle",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "",
+              "default": [ "Yes", "No" ],
+              "inactive": 1
+            },
+            {
+              "key": "ZMODE",
+              "title": "Z-Mode",
+              "help": "",
+              "default": [ "Choord", "Snap-Bottom", "Snap-Top", "Rotate-Bottom", "Rotate-Top" ],
+              "inactive": 1
+            },
+            {
+              "key": "DOTSIZE",
+              "title": "Dot Size",
+              "help": "Dots will actually be a square with sides this long",
+              "default": 1.1
+            },
+            {
+              "key": "DOTINSET",
+              "title": "Dot Inset",
+              "help": "The distance dots are inset from the edge of the part.",
+              "default": 2.0
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "key": "SJC1",
+      "title": "SJC-1",
+      "help": "Configuration part-1 for the sheeting jigs. This tab allows definition of the\nleading and trailing edge jig lines, the location of the central spar\n and the dimensions of the central spar.",
+      "sort_by": [ "LESTX" ],
+      "entry_parts": [
+        {
+          "title": "Jig Configuration",
+          "help": "Overall configuration for the sheeting jigs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LESTX",
+              "title": "LE Start X",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LESTY",
+              "title": "LE Start Y",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LEENX",
+              "title": "LE End X",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LEENY",
+              "title": "LE End Y",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TESTX",
+              "title": "TE Start X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TESTY",
+              "title": "TE Start Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TEENX",
+              "title": "TE End X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TEENY",
+              "title": "TE End Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "BSSTX",
+              "title": "Spar Start X",
+              "help": "This is a single rectangular spar along the (roughly) the centre of the jig.  \nIt provides strength and also something to pin the jig to the building board with.",
+              "default": 0.0
+            },
+            {
+              "key": "BSSTY",
+              "title": "Spar Start Y",
+              "help": "This is a single rectangular spar along the (roughly) the centre of the jig.  \nIt provides strength and also something to pin the jig to the building board with.",
+              "default": 0.0
+            },
+            {
+              "key": "BSENX",
+              "title": "Spar End X",
+              "help": "This is a single rectangular spar along the (roughly) the centre of the jig.  \nIt provides strength and also something to pin the jig to the building board with.",
+              "default": 0.0
+            },
+            {
+              "key": "BSENY",
+              "title": "Spar End Y",
+              "help": "This is a single rectangular spar along the (roughly) the centre of the jig.  \nIt provides strength and also something to pin the jig to the building board with.",
+              "default": 0.0
+            },
+            {
+              "key": "BSWIDTH",
+              "title": "Spar Width",
+              "help": "The width of the bottom spar.",
+              "default": 6.5
+            },
+            {
+              "key": "BSDEPTH",
+              "title": "Spar Depth",
+              "help": "The depth of the bottom spar.",
+              "default": 3.5
+            }
+          ]
+        }
+      ]
+    },
+
+
+    {
+      "key": "SJC2",
+      "title": "SJC-2",
+      "help": "Configuration part-2 for the sheeting jigs. This tab allows definition of the\nbars which clamp the skins at the leading and trailing edges,\nplus the height of the centreline of the wing and the jig thickness.",
+      "sort_by": [ "LEBARWIDTH" ],
+      "entry_parts": [
+        {
+          "title": "Jig Configuration",
+          "help": "Overall configuration for the sheeting jigs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LEBARWIDTH",
+              "title": "LE Bar Width",
+              "help": "The width of the clamping bar at the leading edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "LEBARDEPTH",
+              "title": "LE Bar Depth",
+              "help": "The depth of the clamping bar at the leading edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "TEBARWIDTH",
+              "title": "TE Bar Width",
+              "help": "The width of the clamping bar at the trailing edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "TEBARDEPTH",
+              "title": "TE Bar Depth",
+              "help": "The depth of the clamping bar at the trailing edge of the jig",
+              "default": 0.0
+            },
+
+            {
+              "key": "HEIGHT",
+              "title": "Height Above Board",
+              "help": "The height of the wing choord line above the building board when jigged.",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Material Thickness",
+              "help": "The thickness of the sheeting jig material.  ACAD needs to know this in order to widen the slots at angled joints.",
+              "default": 0.0
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "key": "SJCT2",
+      "title": "SJ Type 2",
+      "help": "Configuration for Type 2 Sheeting Jigs.",
+      "sort_by": [ "LESTX" ],
+      "entry_parts": [
+        {
+          "title": "Jig Configuration",
+          "help": "Overall configuration for the sheeting jigs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LESTX",
+              "title": "LE Start X",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LESTY",
+              "title": "LE Start Y",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LEENX",
+              "title": "LE End X",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LEENY",
+              "title": "LE End Y",
+              "help": "This planform line should be placed in front of the end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TESTX",
+              "title": "TE Start X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TESTY",
+              "title": "TE Start Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TEENX",
+              "title": "TE End X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "TEENY",
+              "title": "TE End Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0
+            },
+            {
+              "key": "LEBARWIDTH",
+              "title": "LE Bar Width",
+              "help": "The width of the clamping bar at the leading edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "LEBARDEPTH",
+              "title": "LE Bar Depth",
+              "help": "The depth of the clamping bar at the leading edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "TEBARWIDTH",
+              "title": "TE Bar Width",
+              "help": "The width of the clamping bar at the trailing edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "TEBARDEPTH",
+              "title": "TE Bar Depth",
+              "help": "The depth of the clamping bar at the trailing edge of the jig",
+              "default": 0.0
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Height Above Board",
+              "help": "The height of the wing choord line above the building board when jigged.",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Material Thickness",
+              "help": "The thickness of the sheeting jig material.  ACAD needs to know this in order to widen the slots at angled joints.",
+              "default": 0.0
+            },
+            {
+              "key": "LEBARPOS",
+              "title": "LE Bar Pos.",
+              "help": "The position of the LE bar in relation to the front extremity of the rib outline.",
+              "default": [ "Inside", "outside" ]
+            },
+            {
+              "key": "TEBARPOS",
+              "title": "TE Bar Pos.",
+              "help": "The position of the TE bar in relation to the rear extremity of the rib outline.",
+              "default": [ "Inside", "outside" ]
+            },
+            {
+              "key": "ENDTYPE",
+              "title": "End Type",
+              "help": "Simple - the ends of each jig will be square; Clamping Bar - the ends will be extended with a cutout for a clamping bar.",
+              "default": [ "Simple", "Clamping Bar" ]
+            }
+          ]
+        },
+        {
+          "title": "Jig Spar",
+          "help": "Keying spar for jig ribs",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LESTX",
+              "title": "LE Start X",
+              "help": "",
+              "default": 0.0
+            },
+            {
+              "key": "LESTY",
+              "title": "LE Start Y",
+              "help": "",
+              "default": 0.0
+            },
+            {
+              "key": "LEENX",
+              "title": "LE End X",
+              "help": "",
+              "default": 0.0
+            },
+            {
+              "key": "LEENY",
+              "title": "LE End Y",
+              "help": "",
+              "default": 0.0
+            },
+            {
+              "key": "TESTX",
+              "title": "TE Start X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TESTY",
+              "title": "TE Start Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TEENX",
+              "title": "TE End X",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TEENY",
+              "title": "TE End Y",
+              "help": "This planform line should be placed behind the TE end of the ribs in the planform by 10 - 20mm. It defines where the end structure of the jig starts.",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "LEBARWIDTH",
+              "title": "LE Bar Width",
+              "help": "The width of the clamping bar at the leading edge of the jig",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "LEBARDEPTH",
+              "title": "LE Bar Depth",
+              "help": "The depth of the clamping bar at the leading edge of the jig",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TEBARWIDTH",
+              "title": "TE Bar Width",
+              "help": "The width of the clamping bar at the trailing edge of the jig",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TEBARDEPTH",
+              "title": "TE Bar Depth",
+              "help": "The depth of the clamping bar at the trailing edge of the jig",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Height Above Board",
+              "help": "The height of the wing choord line above the building board when jigged.",
+              "default": 0.0
+            },
+            {
+              "key": "THK",
+              "title": "Material Thickness",
+              "help": "The thickness of the sheeting jig material.  ACAD needs to know this in order to widen the slots at angled joints.",
+              "default": 0.0
+            },
+            {
+              "key": "LEBARPOS",
+              "title": "LE Bar Pos.",
+              "help": "The position of the LE bar in relation to the front extremity of the rib outline.",
+              "default": [ "Inside", "outside" ],
+              "inactive": 1
+            },
+            {
+              "key": "TEBARPOS",
+              "title": "TE Bar Pos.",
+              "help": "The position of the TE bar in relation to the rear extremity of the rib outline.",
+              "default": [ "Inside", "outside" ],
+              "inactive": 1
+            },
+            {
+              "key": "ENDTYPE",
+              "title": "End Type",
+              "help": "Simple - the ends of each jig will be square; Clamping Bar - the ends will be extended with a cutout for a clamping bar.",
+              "default": [ "Simple", "Clamping Bar" ],
+              "inactive": 1
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "key": "LETEMPLATES",
+      "title": "LE Templates",
+      "help": "Profile templates for the leading edge, to help with accurate sanding.",
+      "sort_by": [ "LEX" ],
+      "entry_parts": [
+        {
+          "title": "LE Template",
+          "help": "A profile gauge to enable accurate sanding of the LE",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "LEX",
+              "title": "LE X",
+              "help": "The X position of the template at the leading edge",
+              "default": 0.0
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
