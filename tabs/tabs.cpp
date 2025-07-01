@@ -640,10 +640,15 @@ QWidget* GTabDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem&
    const QModelIndex& index) const {
    const QAbstractItemModel* mdl = index.model();
 
+   QWidget* editor;
    switch (mdl->data(index, whatAmI).toInt()) {
    case choices:
       // Editor needs to be a combo box
-      return (new QComboBox(parent));
+      editor = new QComboBox(parent);
+      editor->setAutoFillBackground(true);
+      editor->setStyleSheet("background-color: white; min-width: 5em;");
+
+      return (editor);
 
    case airfoilfile: {
       QFileDialog* airfOpen = new QFileDialog(parent,
@@ -665,7 +670,11 @@ QWidget* GTabDelegate::createEditor(QWidget* parent, const QStyleOptionViewItem&
       break;
    }
 
-   return QItemDelegate::createEditor(parent, option, index);
+   editor = QItemDelegate::createEditor(parent, option, index);
+   editor->setAutoFillBackground(true);
+   editor->setStyleSheet("background-color: white; min-width: 5em;");
+
+   return (editor);
 }
 
 void GTabDelegate::setEditorData(QWidget* editor, const QModelIndex& index) const {

@@ -87,12 +87,14 @@ This section is based on [these instructions](https://learn.microsoft.com/en-us/
   - Select Open a Local Folder
     - Select your cloned **acad** folder
 	- (You can close the cmake landing page if it comes up)
-  - In the release type pulldown, select **Qt-Release**
+  - By default, **x64-Debug** configuration will be selected
+    - Select the dropdown and \<Manage Configurations>
+    - Add an **x64-Release** configuration 
   - Select \<Build>\<Build All> or CTRL+B to build
 
 ### Switch to Debug or Release build
 
-  - In the release type pulldown, select either **Qt-Release** or **Qt-Debug**
+  - In the release type pulldown, select either **x64-Release** or **x64-Debug**
   - Select \<Project>\<Delete Cache and Reconfigure>
   - Select \<Build>\<Build All> or CTRL+B to build
 
