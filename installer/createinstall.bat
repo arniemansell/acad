@@ -6,13 +6,11 @@ call %~dp0cleaninstall.bat
 
 REM Copy in the documentation and examples
 xcopy "%~dp0..\docs\User Guide.pdf" "%documentation%" /E /H /C /R /Q /Y
-mkdir "%examples%\examples"
-xcopy "%~dp0..\examples" "%examples%\examples" /E /H /C /R /Q /Y
-mkdir "%examples%\airfoils"
-xcopy "%~dp0..\airfoils" "%examples%\airfoils" /E /H /C /R /Q /Y
+xcopy "%~dp0..\examples" "%examples%" /E /H /C /R /Q /Y
+xcopy "%~dp0..\airfoils" "%airfoils%" /E /H /C /R /Q /Y
 
 REM Copy in the executable and config file and license
-set release_appdir=%~dp0..\out\build\release
+set release_appdir=%~dp0..\out\build\x64-Release
 xcopy "%release_appdir%\acad.exe" "%application%" /E /H /C /R /Q /Y
 xcopy "%release_appdir%\config.json" "%application%" /E /H /C /R /Q /Y
 xcopy "%~dp0..\docs\license.txt" "%application_meta%" /E /H /C /R /Q /Y

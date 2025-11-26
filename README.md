@@ -105,6 +105,7 @@ ACAD uses the Qt Installer Framework to create its installer.  There are a coupl
 * From www.qt.io online instller, install the Qt Installer Framework (currently version 4.10)
 * Update CMakeLists.txt with the new version number
 * Update installer/config/config.xml with the new version number
+* Update installer/packages/****/meta/package.xml with the new version  number and date
 * Update docs/User Guide.docx with the new version number, then print it to update User Guide.pdf
 * Complete the release build as above
 * Run the build. Open each example file in turn and re-save in order to update their native version.

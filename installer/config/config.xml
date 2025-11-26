@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Installer>
     <Name>ACAD</Name>
-    <Version>0.0.0</Version>
+    <Version>3.7.0</Version>
     <Title>ACAD Installer</Title>
     <Publisher>Made Up Models</Publisher>
     <StartMenuDir>Acad</StartMenuDir>

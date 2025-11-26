@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
     <DisplayName>Examples</DisplayName>
-    <Description>Example files and airfoil files</Description>
-    <Version>3.0</Version>
-    <ReleaseDate>2021-10-01</ReleaseDate>
-	<Licenses></Licenses>
+    <Description>Example ACAD designs</Description>
+    <Version>3.7.0</Version>
+    <ReleaseDate>2025-11-22</ReleaseDate>
 	<ForcedInstallation>false</ForcedInstallation>
     <Default>true</Default>
-	<Script>installscript.qs</Script>
+	<Script>install.qs</Script>
 </Package>

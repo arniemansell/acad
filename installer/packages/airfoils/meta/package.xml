@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package>
-    <DisplayName>User Guide</DisplayName>
-    <Description>PDF user guide for ACAD</Description>
+    <DisplayName>Airfoils</DisplayName>
+    <Description>Airfoil definition files</Description>
     <Version>3.7.0</Version>
     <ReleaseDate>2025-11-22</ReleaseDate>
 	<ForcedInstallation>false</ForcedInstallation>
     <Default>true</Default>
-	<Script>ug_shortcut.qs</Script>
+	<Script>install.qs</Script>
 </Package>

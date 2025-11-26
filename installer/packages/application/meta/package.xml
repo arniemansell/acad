@@ -2,8 +2,8 @@
 <Package>
     <DisplayName>Application</DisplayName>
     <Description>Application and files necessary to run ACAD</Description>
-    <Version>3.0</Version>
-    <ReleaseDate>2021-10-01</ReleaseDate>
+    <Version>3.7.0</Version>
+    <ReleaseDate>2025-11-22</ReleaseDate>
 	<ForcedInstallation>false</ForcedInstallation>
     <Licenses>
         <License name="License Agreement" file="license.txt" />
