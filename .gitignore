@@ -89,5 +89,5 @@ CMakeSettings.json
 # Installer
 installer/*.exe
 installer/packages/*/data/*
-installer/packages/*/meta/*
 !package.xml
+installer/packages/application/meta/license.txt

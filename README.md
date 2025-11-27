@@ -109,7 +109,7 @@ ACAD uses the Qt Installer Framework to create its installer.  There are a coupl
 * Update docs/User Guide.docx with the new version number, then print it to update User Guide.pdf
 * Complete the release build as above
 * Run the build. Open each example file in turn and re-save in order to update their native version.
-* Open a powershell in the source installer directory
+* Open a powershell in the source installer directory by using *Tools-Command Line-Developer Powershell* within Visual Studio
 * Run .\createinstall.bat
 * AV scan the installer and save to the installer directory
 
@@ -142,3 +142,5 @@ Code style is somewhat mixed; [Google C++ Style Guide](https://google.github.io/
 3.5 Add new wing sheeting jig type SJ2.
 
 3.6 Update to Qt 6.8.1 and move to github
+
+3.7.0 Add bezier curves and coordinate files to planform definition

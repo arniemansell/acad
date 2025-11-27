@@ -11,9 +11,14 @@
     <Default>true</Default>
 	<Script>application_shortcut.qs</Script>
 	<Operations>
-        <Operation name="RegisterFileType">
-            <Argument>acad</Argument>
-            <Argument>@TargetDir@/acad.exe</Argument>
-        </Operation>
-    </Operations>
+		<Operation name="RegisterFileType">
+			<Argument>acad</Argument>
+			<Argument>@TargetDir@/acad.exe</Argument>
+		</Operation>
+		<Operation name="Mkdir">
+			<Argument>@HomeDir@/Documents/Acad</Argument>
+			<Argument>UNDOOPERATION</Argument>
+			<Argument>''</Argument>
+		</Operation>
+	</Operations>
 </Package>
