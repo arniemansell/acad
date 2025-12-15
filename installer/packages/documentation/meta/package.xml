@@ -2,8 +2,8 @@
 <Package>
     <DisplayName>User Guide</DisplayName>
     <Description>PDF user guide for ACAD</Description>
-    <Version>3.7.0</Version>
-    <ReleaseDate>2025-11-22</ReleaseDate>
+    <Version>3.7.1</Version>
+    <ReleaseDate>2025-12-15</ReleaseDate>
 	<ForcedInstallation>false</ForcedInstallation>
     <Default>true</Default>
 	<Script>ug_shortcut.qs</Script>

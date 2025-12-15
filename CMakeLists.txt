@@ -18,7 +18,7 @@ cmake_minimum_required(VERSION 3.16)
 include(CMakePrintHelpers)
 
 project(ACAD 
-    VERSION 3.7.0
+    VERSION 3.7.1
     LANGUAGES CXX
 )
 

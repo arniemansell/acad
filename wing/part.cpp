@@ -404,6 +404,7 @@ bool Part::cutSlot(
    bool topFlag,
    bool sheetSlot,
    bool snapOutline,
+   bool noKeepOut,
    double yAtBottom,
    double width,
    double leanAngle,
@@ -560,18 +561,20 @@ bool Part::cutSlot(
    }
 
    // Add a keepout
-   if (sheetSlot) {
-      // For a sheet slot, we must include the entirety if the angled region
-      // not just the slot itself
-      obj region = {};
-      region.add(slRef[SLOT_L].ln);
-      region.add(slRef[SLOT_R].ln);
-      autoKpos.emplace_back(region);
-      sparKpos.emplace_back(region);
-   }
-   else {
-      autoKpos.emplace_back(slot);
-      sparKpos.emplace_back(slot);
+   if (!noKeepOut) {
+      if (sheetSlot) {
+         // For a sheet slot, we must include the entirety if the angled region
+         // not just the slot itself
+         obj region = {};
+         region.add(slRef[SLOT_L].ln);
+         region.add(slRef[SLOT_R].ln);
+         autoKpos.emplace_back(region);
+         sparKpos.emplace_back(region);
+      }
+      else {
+         autoKpos.emplace_back(slot);
+         sparKpos.emplace_back(slot);
+      }
    }
 
    // Add the slot to the part
@@ -627,6 +630,7 @@ bool Part::_cutStripSparSlot(
    coord_t planIsect,
    bool topFlag,
    bool snapOutline,
+   bool noKeepOut,
    double width,
    double depth,
    std::string& log,
@@ -655,27 +659,29 @@ bool Part::_cutStripSparSlot(
 
    double y = topFlag ? (top.y - depth) : (bot.y + depth);
 
-   return cutSlot(planIsect, topFlag, false, snapOutline, y, width, 0.0, log, role);
+   return cutSlot(planIsect, topFlag, false, snapOutline, noKeepOut, y, width, 0.0, log, role);
 }
 
 bool Part::cutStripSparSlot(
    coord_t planIsect,
    bool topFlag,
+   bool noKeepOut,
    double width,
    double depth,
    std::string& log,
    int role) {
-   return _cutStripSparSlot(planIsect, topFlag, false, width, depth, log, role);
+   return _cutStripSparSlot(planIsect, topFlag, false, noKeepOut, width, depth, log, role);
 }
 
 bool Part::cutSnappedStripSparSlot(
    coord_t planIsect,
    bool topFlag,
+   bool noKeepOut,
    double width,
    double depth,
    std::string& log,
    int role) {
-   return _cutStripSparSlot(planIsect, topFlag, true, width, depth, log, role);
+   return _cutStripSparSlot(planIsect, topFlag, true, noKeepOut, width, depth, log, role);
 }
 
 bool Part::cutSheetStyleSlot(
@@ -715,9 +721,9 @@ bool Part::cutSheetStyleSlot(
    // Make the slot
    bool retbool = true;
    if (topFlag)
-      retbool &= cutSlot(planIsect, true, true, false, yTop, width, leanAngle, log, role);
+      retbool &= cutSlot(planIsect, true, true, false, false, yTop, width, leanAngle, log, role);
    if (botFlag)
-      retbool &= cutSlot(planIsect, false, true, false, yBot, width, leanAngle, log, role);
+      retbool &= cutSlot(planIsect, false, true, false, false, yBot, width, leanAngle, log, role);
 
    // Trim the part
    if (removeMaterial == LE)
