@@ -144,3 +144,5 @@ Code style is somewhat mixed; [Google C++ Style Guide](https://google.github.io/
 3.6 Update to Qt 6.8.1 and move to github
 
 3.7.0 Add bezier curves and coordinate files to planform definition
+
+3.7.1 Fix bug where a sheet jig spar causes a hole keepout in the associated rib.  Fix .acad file association.

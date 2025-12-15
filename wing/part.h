@@ -156,6 +156,7 @@ public:
       bool topFlag,
       bool sheetSlot,
       bool snapOutline,
+      bool noKeepOut,
       double yAtBottom,
       double width,
       double leanAngle,
@@ -168,6 +169,7 @@ public:
    bool cutStripSparSlot(
       coord_t planIsect,
       bool topFlag,
+      bool noKeepOut,
       double width,
       double depth,
       std::string& log,
@@ -179,6 +181,7 @@ public:
    bool cutSnappedStripSparSlot(
       coord_t planIsect,
       bool topFlag,
+      bool noKeepOut,
       double width,
       double depth,
       std::string& log,
@@ -259,6 +262,7 @@ protected:
       coord_t planIsect,
       bool topFlag,
       bool snapOutline,
+      bool noKeepOut,
       double width,
       double depth,
       std::string& log,

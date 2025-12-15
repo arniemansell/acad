@@ -8,5 +8,6 @@ Component.prototype.createOperations = function()
         component.addOperation("CreateShortcut", "@TargetDir@/acad.exe", "@StartMenuDir@/ACAD Wing Design.lnk",
             "workingDirectory=@TargetDir@", "iconPath=@TargetDir@/mum.ico",
             "description=ACAD Application");
+        component.addOperation("RegisterFileType", "acad", "@TargetDir@/acad.exe")
     }
 }

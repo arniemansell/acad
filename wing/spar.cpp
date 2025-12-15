@@ -161,7 +161,7 @@ void Spar::ribSupport(Rib_set& ribs, std::string& log) {
 
    // Now cut the slots for the ribs
    for (auto ist = iss.begin(); ist != iss.end(); ++ist)
-      cutSlot(ist->intersect, true, true, false, ist->rib_bot.y, ist->wSpr, 0.0, log);
+      cutSlot(ist->intersect, true, true, false, false, ist->rib_bot.y, ist->wSpr, 0.0, log);
 
    // Trim part to length - some overhang is left to support the end ribs
    trimByAutoKeepouts(-Part::OVC + JIG_EXTEND_END);
@@ -334,7 +334,7 @@ void Spar::singleSpar(Rib_set& ribs, std::string& log) {
 
    for (auto& ist : iss)
       if (ist.slotRib)
-         ist.rib->cutSnappedStripSparSlot(ist.intersect, ribTop, ist.wRib, spD, log);
+         ist.rib->cutSnappedStripSparSlot(ist.intersect, ribTop, false, ist.wRib, spD, log);
 }
 
 void Spar::ribTabs(Rib_set& ribs, std::string& log) {
@@ -345,7 +345,7 @@ void Spar::ribTabs(Rib_set& ribs, std::string& log) {
    for (auto& ist : iss) {
       if (ist.rib->typeTxt == "RIB") // Don't add tabs to doublers or geodetics
       {
-         if (!ist.rib->cutSlot(ist.intersect, false, false, false, -height, ribTabW, 0.0, log))
+         if (!ist.rib->cutSlot(ist.intersect, false, false, false, false, -height, ribTabW, 0.0, log))
             log.append(
                SS("Problem adding a rib tab to rib ") + TS(index) + " at plan point " + TScoord(ist.intersect) + "\n");
          else {
@@ -385,8 +385,8 @@ void Spar::topBotSpar(Rib_set& ribs, std::string& log) {
 
    for (auto& ist : iss) {
       if (ist.slotRib) {
-         ist.rib->cutStripSparSlot(ist.intersect, true, ist.wRib, spD, log);
-         ist.rib->cutStripSparSlot(ist.intersect, false, ist.wRib, spD, log);
+         ist.rib->cutStripSparSlot(ist.intersect, true, false, ist.wRib, spD, log);
+         ist.rib->cutStripSparSlot(ist.intersect, false, false, ist.wRib, spD, log);
       }
    }
 }
@@ -779,9 +779,9 @@ bool Spar_set::addCreateJigsType2(GenericTab* T, Rib_set& ribs, std::string& log
             double cutHeight = (spr.spD / 2.0) + 0.3;
             double jigSlotW = slotWidth(spr.objLn, ist->rib->objLn, spr.spW, ist->rib->jig_thck);
             double sprSlotW = slotWidth(ist->rib->objLn, spr.objLn, ist->rib->jig_thck, spr.spW);
-            spr.cutStripSparSlot(ist->intersect, true, sprSlotW, cutHeight, log);
-            ist->rib->cutStripSparSlot(ist->intersect, false, jigSlotW, cutHeight, log, Rib::botjig);
-            ist->rib->cutStripSparSlot(ist->intersect, false, jigSlotW, cutHeight, log, Rib::topjig);
+            spr.cutStripSparSlot(ist->intersect, true, false, sprSlotW, cutHeight, log);
+            ist->rib->cutStripSparSlot(ist->intersect, false, true, jigSlotW, cutHeight, log, Rib::botjig);
+            ist->rib->cutStripSparSlot(ist->intersect, false, true, jigSlotW, cutHeight, log, Rib::topjig);
          }
 
          // We need two copies of it (top and bottom jig)
