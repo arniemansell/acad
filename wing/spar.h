@@ -24,6 +24,7 @@ along with this program.If not, see < https://www.gnu.org/licenses/>.
 
 enum spartype_e {
    sheetspar,
+   falselete,
    jigspar,
    ribsupport,
    singlespar,
@@ -89,15 +90,16 @@ public:
    double height = 0.0;                               //!< Height of centreline above building board
    double tabpc = 0.0;                                //!< Percentage of joint to jig which is wood
    bool inFromBelow = false;                          //!< For sheet spars, insert the spar from below
+   double plnfrmOfs = 0.0;                            //!< For false LE/TE, the offset from the planform egde
 
    std::list<intersect_t> iss = {}; //!< Intersect information for rib/spar intersects
 
-   bool create(Rib_set& ribs, std::string& log);
+   bool create(Rib_set& ribs, Planform& plnf, std::string& log);
 
    obj& getPlan();
 
    bool isSheetType() {
-      return ((mytype == sheetspar) || (mytype == websslotted) || (mytype == jigspar) || (mytype == ribsupport));
+      return ((mytype == sheetspar) || (mytype == falselete) || (mytype == websslotted) || (mytype == jigspar) || (mytype == ribsupport));
    };
    bool isStripType() {
       return ((mytype == boxspar) || (mytype == hspar) || (mytype == hsspar) || (mytype == singlespar) || (mytype == ribtabs));
@@ -148,7 +150,7 @@ public:
    /**
     * @brief Create the spars each in turn
     */
-   bool create(Rib_set& ribs, std::string& log);
+   bool create(Rib_set& ribs, Planform& plnf, std::string& log);
 
    /**
     * @brief Generate sheeting jigs spars - Type 2

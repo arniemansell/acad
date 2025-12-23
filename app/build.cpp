@@ -121,7 +121,7 @@ void App::buildWingModel(Wing& w, bool inDraftMode) {
          break;
       if (!w.sprs.add(tabMap.at("STRIPSPARS"), log))
          break;
-      if (!w.sprs.create(w.ribs, log))
+      if (!w.sprs.create(w.ribs, w.plnf, log))
          break;
       if (!w.ribs.addCreateJigs(tabMap.at("SJC1"), tabMap.at("SJC2"), log))
          break;

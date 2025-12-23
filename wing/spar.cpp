@@ -27,17 +27,41 @@ bool sp_rib_is_sort(const intersect_t& a, const intersect_t& b) {
    return (a.intersect.x < b.intersect.x);
 }
 
-bool Spar::create(Rib_set& ribs, std::string& log) {
+bool Spar::create(Rib_set& ribs, Planform& plnf, std::string& log) {
    DBGLVL2("stX: %lf  stY: %lf  enX: %lf  enY: %lf", stX, stY, enX, enY);
 
-   objLn.set(coord_t{ stX, stY }, coord_t{ enX, enY });
-   objLn.extend_mm(REFLN_EXT_mm);
+   if (mytype == falselete) {
+      switch (fe) {
+      case pivot_e::CENTRE:
+      case pivot_e::LE:
+         refObj.copy_from(plnf.getRole(Planform::LE));
+         objObj.copy_from(plnf.getRole(Planform::LE));
+         objObj.trace_at_offset(-abs(plnfrmOfs));
+         break;
+
+      case pivot_e::TE:
+         refObj.copy_from(plnf.getRole(Planform::TE));
+         objObj.copy_from(plnf.getRole(Planform::LE));
+         objObj.trace_at_offset(abs(plnfrmOfs));
+         break;
+
+      default:
+         dbg::fatal(SS("Unrecognised pivot type in Spar::create: ") + TS((int)fe));
+         break;
+
+      }
+   }
+   else {
+      objLn.set(coord_t{ stX, stY }, coord_t{ enX, enY });
+      objLn.extend_mm(REFLN_EXT_mm);
+   }
 
    switch (mytype) {
    case jigspar:
       jigSpar(ribs, log);
       break;
 
+   case falselete:
    case sheetspar:
    case websslotted:
       sheetSpar(ribs, log);
@@ -84,7 +108,11 @@ obj& Spar::getPlan() {
       return plan;
 
    if (isSheetType()) {
-      plan.add_rect(objLn, spW, markspace);
+      if (objObj.empty())
+         plan.add_rect(objLn, spW, markspace);
+      else
+         plan.splice(objObj);
+
       if (mytype == spartype_e::jigspar)
          plan.add_dotted(objLn, 2.0, 8.0);
    }
@@ -544,6 +572,10 @@ bool Spar_set::add(GenericTab* T, std::string& log) {
          spr.mytype = spartype_e::sheetspar;
          spr.typeTxt.append("SHEET SPAR");
       }
+      else if (T->gqst(r, "meta") == QString("False LE/TE")) {
+         spr.mytype = spartype_e::falselete;
+         spr.typeTxt.append("FALSE EDGE");
+      }
       else if (T->gqst(r, "meta") == QString("Sheet Spar+Jig")) {
          spr.mytype = spartype_e::jigspar;
          spr.typeTxt.append("JIGGING SPAR");
@@ -586,6 +618,9 @@ bool Spar_set::add(GenericTab* T, std::string& log) {
       spr.fe = pivot_e::CENTRE;
 
       switch (spr.mytype) {
+      case spartype_e::falselete:
+         spr.plnfrmOfs = T->gdbl(r, "PLANFORMOFS");
+         // Fallthrough
       case spartype_e::sheetspar:
       case spartype_e::jigspar:
       case spartype_e::ribsupport:
@@ -708,10 +743,10 @@ bool Spar_set::add(GenericTab* T, std::string& log) {
    return true;
 }
 
-bool Spar_set::create(Rib_set& ribs, std::string& log) {
+bool Spar_set::create(Rib_set& ribs, Planform& plnf, std::string& log) {
    for (spar_iter it = begin(); it != end(); it++) {
       DBGLVL1("Creating Spar Type %d index %d", (int)it->mytype, sparItInd(it));
-      if (!it->create(ribs, log))
+      if (!it->create(ribs, plnf, log))
          return false;
    }
    return true;

@@ -1101,6 +1101,135 @@
               "inactive": 1
             },
             {
+              "key": "PLANFORMOFS",
+              "title": "Edge Offset.",
+              "help": "Offset from the planform LE or TE",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
+        },
+        {
+          "title": "False LE/TE",
+          "help": "A sheet spar offset from the planform LE or TE. Supports curved planform.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of the spar",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "The Y position of the start of the spar",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of the spar",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "The Y position of the end of the spar",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "THK",
+              "title": "Thickness",
+              "help": "The thickness of the spar material",
+              "default": 0.0
+            },
+            {
+              "key": "SLOTDEPTH",
+              "title": "Slot %",
+              "help": "The depth of the slot in the spar as a percentage of the spar height",
+              "default": 50.0
+            },
+            {
+              "key": "INSFROM",
+              "title": "Insert",
+              "help": "Insert from above or below.  For example, if ABOVE is selected\nthe rib will be slotted at the top and the spar\nwill be slotted at the bottom.",
+              "default": [ "Above", "Below" ]
+            },
+            {
+              "key": "WIDENSLOTS",
+              "title": "Widen Slots",
+              "help": "widen slots to account for angled spar / rib intersections",
+              "default": [ "Yes", "No" ]
+            },
+            {
+              "key": "FALSEEDGE",
+              "title": "Remove Material",
+              "help": "This setting can be used to make the spar into a false leading or\ntrailing edge by removing rib material in front of or behind the spar.",
+              "default": [ "No", "In Front", "Behind" ]
+            },
+            {
+              "key": "LH",
+              "title": "Holes?",
+              "help": "Set to yes if this spar should have lightening holes added",
+              "default": [ "No", "Yes" ]
+            },
+            {
+              "key": "LHBW",
+              "title": "LH Border",
+              "help": "Lightening hole border width",
+              "default": 0.0
+            },
+            {
+              "key": "MHL",
+              "title": "MHL",
+              "help": "Maximum length of a lightening hole - longer holes will be split",
+              "default": 0.0
+            },
+            {
+              "key": "TABSNOTSLOTS",
+              "title": "Tabs?",
+              "help": "Instead of slots at the front of the rib, use a tab with a matching hole in the spar.\nThis option should be used in conjunction with the Remove Material option.\nUsed for false leading edges.  Use a typical slot depth of 35%.",
+              "default": [ "Slots", "Tabs" ]
+            },
+            {
+              "key": "HEIGHT",
+              "title": "Jig Height",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "TABW",
+              "title": "Jig Sep %",
+              "help": "",
+              "default": 20.0,
+              "inactive": 1
+            },
+            {
+              "key": "RSTABW",
+              "title": "Rib S-Tab Width",
+              "help": "The width of support tabs added to the bottom of ribs",
+              "default": 10.0,
+              "inactive": 1
+            },
+            {
+              "key": "PLANFORMOFS",
+              "title": "Edge Offset",
+              "help": "Offset from the planform LE or TE",
+              "default": 0.0
+            },
+            {
               "key": "NOTES",
               "title": "Notes",
               "help": "Make your own notes here",
@@ -1209,6 +1338,13 @@
               "title": "Rib S-Tab Width",
               "help": "The width of support tabs added to the bottom of ribs",
               "default": 10.0,
+              "inactive": 1
+            },
+            {
+              "key": "PLANFORMOFS",
+              "title": "Edge Offset.",
+              "help": "Offset from the planform LE or TE",
+              "default": 0.0,
               "inactive": 1
             },
             {
@@ -1331,6 +1467,13 @@
               "inactive": 1
             },
             {
+              "key": "PLANFORMOFS",
+              "title": "Edge Offset.",
+              "help": "Offset from the planform LE or TE",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
               "key": "NOTES",
               "title": "Notes",
               "help": "Make your own notes here",
@@ -1448,6 +1591,13 @@
               "title": "Rib S-Tab Width",
               "help": "The width of support tabs added to the bottom of ribs",
               "default": 10.0
+            },
+            {
+              "key": "PLANFORMOFS",
+              "title": "Edge Offset.",
+              "help": "Offset from the planform LE or TE",
+              "default": 0.0,
+              "inactive": 1
             },
             {
               "key": "NOTES",

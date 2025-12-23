@@ -102,6 +102,8 @@ public:
    std::string notes = {};   //!< Notes to display with the part
    line refLn = {};          //!< The reference line in the plan view
    line objLn = {};          //!< The object line in the plan view (i.e. the actual line occupied by the part)
+   obj refObj = {};          //!< Replaces refLn for parts that support curvature
+   obj objObj = {};          //!< Replaces objLn for parts that support curvature
 
    std::unordered_map<int, obj> o; //!< Roles of the part
 
