@@ -55,6 +55,7 @@ public:
    double washout = 0.0;         //!< Washout angle
    pivot_e wo_pivot = CENTRE;    //!< Point about which washout is applied
    coord_t wo_pivot_pt = { 0, 0 }; //!< Point about which washout is applied
+   double dihedral_hght = 0.0;        //!< Chordline height offset derived from dihedral
 
    // 2D planform information
    line achd = {}; //!<Choord line in side elevation
@@ -194,6 +195,11 @@ public:
     * @brief Apply trailing edge thickness to a range of ribs, linearly interpolated between endpoints
     */
    bool setTeThickness(int r, GenericTab* T, std::string& log);
+
+   /**
+    * @brief Apply chordline offset as a simple dihedral for one piece wings
+    */
+   bool setDihedral(int r, GenericTab* T, std::string& log);
 
 private:
    bool check_geodetic_intersect(rib_iter rib, line* topln, line* botln, coord_t* top, coord_t* bot);

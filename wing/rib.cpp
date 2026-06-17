@@ -50,7 +50,9 @@ void Rib::createRibPart(Planform& pl, Airfoil_set& af, bool draftMode, std::stri
    obj& aorgo = addRole(aorg);
    aorgo = af.generate_airfoil(refLn, te_thck, te_blend, pl.getRole(Planform::LE), pl.getRole(Planform::TE));
    aorgo.regularise();
-   achd.set(coord_t{ 0.0, 0.0 }, coord_t{ aorgo.find_extremity(RIGHT), 0.0 });
+   achd.set(coord_t{ 0.0, dihedral_hght }, coord_t{ aorgo.find_extremity(RIGHT), dihedral_hght });
+   DBGLVL2("Rib chord line: %s", achd.print_str());
+
 
    obj& anoto = addRole(anot);
    anoto = af.generate_airfoil(refLn, 0.0, te_blend, pl.getRole(Planform::LE), pl.getRole(Planform::TE));
@@ -60,6 +62,7 @@ void Rib::createRibPart(Planform& pl, Airfoil_set& af, bool draftMode, std::stri
    // Process in stages to generate rib and jig references
    obj& apcdo = addRole(apcd);
    apcdo.copy_from(aorgo);
+   apcdo.add_offset(0, dihedral_hght);
 
    if (washout != 0.0) {
       // Find the pivot point
@@ -338,6 +341,9 @@ bool Rib_set::addRibParams(GenericTab* T, std::string& log) {
       else if (T->gqst(r, "meta") == QString("TE Thickness")) {
          setTeThickness(r, T, log);
       }
+      else if (T->gqst(r, "meta") == QString("Dihedral")) {
+         setDihedral(r, T, log);
+      }
       else
          log.append(SS("Unknown type of rib param ") + T->gqst(r, "meta").toStdString() + "\n");
    }
@@ -447,6 +453,29 @@ bool Rib_set::setTeThickness(int r, GenericTab* T, std::string& log) {
    }
    if (!doesIntersect)
       log.append(SS("TE thickness row ") + TS(r + 1) + " does not affect any ribs\n");
+
+   return true;
+}
+
+bool Rib_set::setDihedral(int r, GenericTab* T, std::string& log) {
+   double x0 = T->gdbl(r, "STX");
+   double t0 = T->gdbl(r, "STVAL");
+   double x1 = T->gdbl(r, "ENX");
+   double t1 = T->gdbl(r, "ENVAL");
+
+   linvar dh(x0, t0, x1, t1);
+
+   bool doesIntersect = false;
+
+   for (auto rib = begin(); rib != end(); ++rib) {
+      double xpos = (rib->refLn.get_S0().x + rib->refLn.get_S1().x) / 2.0;
+      if ((xpos >= x0) && (xpos <= x1)) {
+         doesIntersect = true;
+         rib->dihedral_hght = dh.v(xpos);
+      }
+   }
+   if (!doesIntersect)
+      log.append(SS("Dihedral row ") + TS(r + 1) + " does not affect any ribs\n");
 
    return true;
 }

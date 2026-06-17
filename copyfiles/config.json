@@ -984,6 +984,78 @@
               "default": ""
             }
           ]
+        },
+        {
+          "title": "Dihedral",
+          "help": "Change in chordline height between two X positions on the wing.",
+          "key": "meta",
+          "attributes": [
+            {
+              "key": "STX",
+              "title": "Start X",
+              "help": "The X position of the start of dihedral slope",
+              "default": 0.0
+            },
+            {
+              "key": "STY",
+              "title": "Start Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "ENX",
+              "title": "End X",
+              "help": "The X position of the end of dihedral slope",
+              "default": 0.0
+            },
+            {
+              "key": "ENY",
+              "title": "End Y",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "WIDTH",
+              "title": "Width",
+              "help": "",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "STVAL",
+              "title": "Start Value",
+              "help": "Dihedral chordline vertical offset at the Start X position.",
+              "default": 0.0
+            },
+            {
+              "key": "ENVAL",
+              "title": "End Value",
+              "help": "Dihedral chordline vertical offset at the End X position.",
+              "default": 0.0
+            },
+            {
+              "key": "PIVOT",
+              "title": "WO Pivot Point",
+              "help": "",
+              "default": [ "CENTRE", "LE", "TE" ],
+              "inactive": 1
+            },
+            {
+              "key": "BLEND",
+              "title": "TE Blend %",
+              "help": "TE Thickness: Percentage of the chord to blend over; set to 0 to use default",
+              "default": 0.0,
+              "inactive": 1
+            },
+            {
+              "key": "NOTES",
+              "title": "Notes",
+              "help": "Make your own notes here",
+              "default": ""
+            }
+          ]
         }
       ]
     },
